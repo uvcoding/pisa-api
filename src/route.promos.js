@@ -15,8 +15,8 @@ router.route('/promos')
     })
 
     .post(function(req,res) {
-        const { description, content, price, creation } = req.body;
-        db.query('INSERT INTO pisa_promos SET description = ?, content = ?, price = ?, creation = ?;', [ description, content, price, creation ], (err, rows, fields) => {
+        const { description, content, price } = req.body;
+        db.query('INSERT INTO pisa_promos SET description = ?, content = ?, price = ?;', [ description, content, price ], (err, rows, fields) => {
             if(!err) {
                 let reply = { error: false, codigo: 200, mensaje: 'Creado' };     
                 res.status(200).send( reply ); 
@@ -30,7 +30,7 @@ router.route('/promos')
 
     .put(function(req,res) {
         const { id, description, content, price, creation } = req.body;
-        db.query('UPDATE pisa_promos SET description = ?, content = ?, price = ?, creation = ? WHERE id = ?;', [ description, content, price, creation, id ], (err, rows, fields) => {
+        db.query('UPDATE pisa_promos SET description = ?, content = ?, price = ? WHERE id = ?;', [ description, content, price, id ], (err, rows, fields) => {
             if(!err) {
                 let reply = { error: false, codigo: 200, mensaje: 'Actualizado' };     
                 res.status(200).send( reply ); 

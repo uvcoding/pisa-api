@@ -30,7 +30,7 @@ router.route('/users')
 
     .put(function(req,res) {
         const { id, username, passHash, email } = req.body;
-        db.query('UPDATE pisa_users SET username= ?, passHash= ?, email= ? WHERE id = ?;', [ username, passHash, email, id], (err, rows, fields) => {
+        db.query('UPDATE pisa_users SET username= ?, passHash= ?, email= ? WHERE id = ?;', [ username, passHash, email, id ], (err, rows, fields) => {
             if(!err) {
                 let reply = { error: false, codigo: 200, mensaje: 'Actualizado' };     
                 res.status(200).send( reply ); 

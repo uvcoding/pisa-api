@@ -15,8 +15,8 @@ router.route('/products')
     })
 
     .post(function(req,res) {
-        const { productClassId, productDescription, productPrice, creation } = req.body;
-        db.query('INSERT INTO pisa_products SET productClassId = ?, productDescription = ?, productPrice = ?, creation = ?;', [ productClassId, productDescription, productPrice, creation ], (err, rows, fields) => {
+        const { productClassId, productDescription, productPrice } = req.body;
+        db.query('INSERT INTO pisa_products SET productClassId = ?, productDescription = ?, productPrice = ?;', [ productClassId, productDescription, productPrice ], (err, rows, fields) => {
             if(!err) {
                 let reply = { error: false, codigo: 200, mensaje: 'Creado' };     
                 res.status(200).send( reply ); 
@@ -30,7 +30,7 @@ router.route('/products')
 
     .put(function(req,res) {
         const { id, productClassId, productDescription, productPrice, creation } = req.body;
-        db.query('UPDATE pisa_products SET productClassId = ?, productDescription = ?, productPrice = ?, creation  = ? WHERE id = ?;', [ productClassId, productDescription, productPrice, creation, id ], (err, rows, fields) => {
+        db.query('UPDATE pisa_products SET productClassId = ?, productDescription = ?, productPrice = ? WHERE id = ?;', [ productClassId, productDescription, productPrice, id ], (err, rows, fields) => {
             if(!err) {
                 let reply = { error: false, codigo: 200, mensaje: 'Actualizado' };     
                 res.status(200).send( reply ); 
