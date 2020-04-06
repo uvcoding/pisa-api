@@ -7,7 +7,8 @@ Default listening port is #3000; Port could be changed by OS. You could see the 
 ## Database
 Database configuration is stored in `src/module.database.js`. You need to change the following code line with your own database information:
 
-``` [json] { 
+``` [json]
+{ 
     host: 'your.host.ip.or.name',
     user: 'username',
     password: 'password',
@@ -18,7 +19,8 @@ Database configuration is stored in `src/module.database.js`. You need to change
 ## Default JSON objects
 
 ### Users default JSON object
-``` [json] {
+``` [json]
+{
     "id": 1,
     "username": "Some Name",
     "passHash": "Some Password Hash",
@@ -28,7 +30,8 @@ Database configuration is stored in `src/module.database.js`. You need to change
 ```
 
 ### Shift default JSON object
-``` [json] {
+``` [json]
+{
     "id": 1,
     "state": "close",
     "opentimestamp": "2020-02-08T21:37:47.000Z",
@@ -39,20 +42,75 @@ Database configuration is stored in `src/module.database.js`. You need to change
 ```
 
 ### Promo default JSON object
-``` [json] {
+``` [json]
+{
     "id": 46,
-    "class": "PromociÃ³n Pizza",
-    "description": "Promo 1",
-    "content": "3x Muzzas",
+    "class": "promo.class",
+    "description": "promo.name",
+    "content": "promo.products",
     "price": 680,
     "creation": "2020-02-08T16:40:00.000Z"
+}
+```
+> class property is deprecated since Pisa version 2.
+
+### Product default JSON object
+``` [json]
+{
+    "id": 87,
+    "productClassId": 3,
+    "productDescription": "your.product.description",
+    "productPrice": 160,
+    "creation": "2020-02-08T19:42:08.000Z"
+}
+```
+
+### Product Class default JSON object
+``` [json]
+{
+    "id": 2,
+    "name": "Minutas"
+}
+```
+
+### Order default JSON object
+``` [json]
+{
+    "id": 1,
+    "orderShift": 1,
+    "stateid": 70,
+    "customerName": "your.customer.name",
+    "customerAddress": "your.customer.addess [ near.street / near.streat ]",
+    "customerPhone": "11",
+    "customerOrder": "your.customer.order",
+    "orderSubtotal": 40,
+    "orderDiscount": 0,
+    "orderSurcharge": 10,
+    "orderPayment": 50,
+    "orderChange": 0,
+    "totalOrder": 50,
+    "notes": ".",
+    "creation": "2020-02-08T23:04:39.000Z"
+}
+```
+
+### Customer default JSON object
+``` [json]
+{
+    "id": 1,
+    "name": "your.customer.name",
+    "address": "your.customer.addess",
+    "nearStreetA": "near.street",
+    "nearStreetB": "near.streat",
+    "phone": "+541123456789",
+    "creation": "2020-02-08T21:04:52.000Z"
 }
 ```
 
 ## Default Routes
 Use the following routes to access desired tables into database:
 
-* `/users` list of all users.
+* `/users` .
 * `/shift` list of all shifts.
 * `/promos` list of all promos.
 * `/products` list of all products.
