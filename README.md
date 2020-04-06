@@ -18,22 +18,7 @@ Database configuration is stored in `src/module.database.js`. You need to change
 }
 ```
 
-## GET Requests
-
-When you send a GET request to one of this routes, API returns a JSON file with the following information:
-
-* `/users` list of all users.
-* `/shift` list of all shifts.
-* `/promos` list of all promos.
-* `/products` list of all products.
-* `/classes` list of all products classes.
-* `/orders` list of all orders.
-* `/customers` list of all customers.
-
-## POST and PUT Request
-
-When you send a POST request you be able to create new item in the database. Using POST request you must to include a JSON object with the required information in each case.
-When you send a PUT request you be able to update new item in the database. Using PUT request you must to include a JSON object with the required information in each case and the `id` of item to be modified.
+## Default JSON objects
 
 * Users default JSON object
 
@@ -59,3 +44,22 @@ When you send a PUT request you be able to update new item in the database. Usin
     "orderTotalAmount": 5535
 }
 ```
+
+## Default Routes
+
+* `/users` list of all users.
+* `/shift` list of all shifts.
+* `/promos` list of all promos.
+* `/products` list of all products.
+* `/classes` list of all products classes.
+* `/orders` list of all orders.
+* `/customers` list of all customers.
+
+## GET Requests
+
+When you send a GET request to a default route, API returns a JSON file with a complitte list of each kind of object.
+
+## POST and PUT Request
+
+When you send a POST request to a default route,you be able to create new item in the database. Using POST request you must to include a JSON object with the required information in each case.
+When you send a PUT request to a default route, you be able to update new item in the database. Using PUT request you must to include a JSON object with the required information in each case and the `id` of item to be modified.
