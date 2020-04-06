@@ -16,7 +16,7 @@ Database configuration is stored in `src/module.database.js`. You need to change
     password: 'password',
     database: 'database.name'
 }
-```.
+```
 
 ## GET Requests
 
