@@ -119,7 +119,7 @@ Use the following routes to access desired tables into database:
 * `/customers` list of all customers.
 
 ## GET Requests
-When you send a GET request to a default route, API returns a JSON file with a complitte list of each kind of object.
+When you send a GET request to a default route, API returns a JSON file with a complette list or justo one ítem of any kind of object.
 
 ## POST and PUT Request
 When you send a POST request to a default route,you be able to create new item in the database. Using POST request you must to include a JSON object with the required information in each case.
