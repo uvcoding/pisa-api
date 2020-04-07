@@ -3,6 +3,9 @@ const app = express();
 
 /* Configuración */
 app.set('port', process.env.PORT || 3000)
+app.set('Access-Control-Allow-Origin', "*");
+app.set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+app.set('Access-Control-Allow-Headers', 'Content-Type');
 
 /* Middlewares */
 app.use(express.json());
