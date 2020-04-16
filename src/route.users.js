@@ -96,7 +96,7 @@ router.get('/users/validate/:username/:password', function(req, res) {
                         email: rows[0].email,
                         name: rows[0].name,
                         surname: rows[0].surname,
-                        admin: rows[0].admin,
+                        role: rows[0].role,
                         validation: true
                     };
                 }
