@@ -3,9 +3,10 @@ const app = express();
 
 /* Configuración */
 app.set('port', process.env.PORT || 3000)
-app.set('Access-Control-Allow-Origin', "*");
-app.set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-app.set('Access-Control-Allow-Headers', 'Content-Type');
+app.set( 'Access-Control-Allow-Origin', '*' );
+app.set( 'Access-Control-Allow-Headers', '*');
+app.set( 'Access-Control-Allow-Methods', 'POST, GET, OPTIONS' );
+app.set( 'Content-Type', 'application/json' );
 
 /* Middlewares */
 app.use(express.json());
